@@ -99,8 +99,39 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         startActivity(intent);
 
                     }else{
-//                        AlertDialog.Builder
-                        Toast.makeText(MainActivity.this,"Result :"+barcode,Toast.LENGTH_LONG).show();
+//                        String id = jsonResponse.getString("id");
+//                        String paying = jsonResponse.getString("paying");
+//                        String period = jsonResponse.getString("period");
+//                        String set = jsonResponse.getString("set");
+//                        String pay_status = jsonResponse.getString("pay_status");
+//                        String renter_id = jsonResponse.getString("renter_id");
+//                        String renter_code = jsonResponse.getString("renter_code");
+//                        String renter_name = jsonResponse.getString("renter_name");
+//                        String renter_lastname = jsonResponse.getString("renter_lastname");
+//                        String renter_image = jsonResponse.getString("renter_image");
+//                        String stall_price = jsonResponse.getString("stall_price");
+//                        String rent_type = jsonResponse.getString("rent_type");
+//                        Intent intent = new Intent(MainActivity.this, PaymentActivity.class);
+//                        intent.putExtra("id", id);
+//                        intent.putExtra("paying", paying);
+//                        intent.putExtra("period", period);
+//                        intent.putExtra("set", set);
+//                        intent.putExtra("pay_status", pay_status);
+//                        intent.putExtra("renter_id", renter_id);
+//                        intent.putExtra("renter_code", renter_code);
+//                        intent.putExtra("renter_name", renter_name);
+//                        intent.putExtra("renter_lastname", renter_lastname);
+//                        intent.putExtra("renter_image", renter_image);
+//                        intent.putExtra("stall_price", stall_price);
+//                        intent.putExtra("rent_type", rent_type);
+//
+//                        startActivity(intent);
+                        AlertDialog.Builder  Dialog = new AlertDialog.Builder(MainActivity.this);
+                                Dialog.setIcon(R.drawable.launcher_icon)
+                                .setTitle("ไม่พบข้อมูลที่ค้างชำระ")
+                                .setMessage("ผู้เช่าคนที่" + barcode+" ไม่มีการค้างชำระเงิน")
+                                .show();
+                        Toast.makeText(MainActivity.this,"Result :"+success,Toast.LENGTH_LONG).show();
                     }
 
                 } catch (JSONException e) {
